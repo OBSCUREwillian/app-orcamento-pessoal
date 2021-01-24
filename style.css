@@ -1,0 +1,233 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    min-width:100%;
+}
+
+body{
+    font-family: "Trbuchet MS", Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+#barra-menu{
+    position: relative;
+    height: 45px;
+    background-color: #1F84FF;
+    padding: 10px 90px;
+}
+
+#logo{
+    margin-top: -1px;
+}
+
+ul#menu-lateral-itens{
+    line-height: 39px;
+    float: right;
+}
+
+ul li.menu-lateral-intem{
+    float: left;
+    padding-left: 35px;
+
+}
+
+li.menu-lateral-intem a{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 100;
+}
+
+li.menu-lateral-intem a:hover{
+    padding-bottom: 5px;
+    border-bottom: 1px solid #fff;
+}
+
+#menu{
+    cursor: pointer;
+    float: right;
+    width: 38px;
+    height: 40px;
+}
+
+#menu-expandido{
+    position: absolute;
+    margin-top: 65.3px;
+    height: 0px;
+    background-color: #1F84FF;
+    padding: 0px 90px;
+    transition: .50s ease-in-out;
+    visibility: hidden;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+#lista-menu{
+    position: relative;
+    top: 25px;
+    font-size: 25px;
+    text-decoration: none;
+    padding-top: 7px;
+    font-weight: 600;
+    /* opacity: 0;
+    visibility: hidden;
+    transition: .27s ease-in-out; */
+}
+
+.item-lista{
+    padding-bottom: 10px;
+}
+
+.item-lista a{
+    color: #fff;
+}
+
+.item-lista a:hover{
+    color: blue;
+}
+
+#div-hamburguer{
+    position: relative;
+
+}
+
+#label-hamburguer{
+    display: none;
+}
+
+#hamburguer{
+    position: relative;
+    display: block;
+    background: #fff;
+    height: 2px;
+    top: 19px;
+    transition: .5s ease-in-out;
+
+}
+
+#hamburguer::before,
+#hamburguer::after{
+    background: #fff;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .5s ease-in-out;
+}
+
+#hamburguer::before{
+    top: -11px;
+}
+#hamburguer::after{
+    bottom: -11px;
+}
+
+input#menu-hamburguer{
+    display: none;
+}
+
+input#menu-hamburguer:checked ~ label #hamburguer{
+    transform: rotate(45deg);
+}
+
+input#menu-hamburguer:checked ~ label #hamburguer::before{
+    transform: rotate(90deg);
+    top: 0;
+}
+
+input#menu-hamburguer:checked ~ label #hamburguer::after{
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+input#menu-hamburguer:checked ~ div#menu-expandido{
+    height: 130px;
+    transition: .50s ease-in-out;
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+ /* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    #label-hamburguer{
+        display: inline;
+    }
+
+    #menu-lateral-itens{
+        display: none;
+    }
+
+    input#menu-hamburguer:checked ~ div#menu-expandido{
+
+    }
+    
+ }
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+    #label-hamburguer{
+        display: inline;
+    }
+    
+    #menu-lateral-itens{
+        display: none;
+    }
+
+    input#menu-hamburguer:checked ~ div#menu-expandido{
+        
+    }
+    
+    
+ }
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    #label-hamburguer{
+        display: inline;
+    }
+
+    #menu-lateral-itens{
+        display: none;
+    }
+
+ }
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+    input#menu-hamburguer:checked ~ div#menu-expandido{
+        display: none;
+    }
+
+    
+ }
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+    input#menu-hamburguer:checked ~ div#menu-expandido{
+        display: none;
+    }
+
+ }
