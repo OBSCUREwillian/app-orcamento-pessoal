@@ -2,53 +2,131 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/ba6e00a3e9.js" crossorigin="anonymous"></script>
+
 </head>
-<body>
-    <header >
-        <!-- MENU - NAVEGAÇÃO -->
-        <nav id="barra-menu">
-            <!-- LOGO -->
-            <a href="index.html">
-                <img id="logo" width="45px" src="logo.png" alt="">
-            </a>
-            <!-- FIM LOGO -->
+<body >
 
-
-            <!-- MENU - NORMAL -->
-            <ul id="menu-lateral-itens">
-                <li class="menu-lateral-intem"><a href="#">Cadastro</a> </li>
-                <li class="menu-lateral-intem"><a href="#">Consulta</a> </li>
-            </ul>
-            <!-- FIM MENU - NORMAL -->
-
+    <header>
+        <nav id="nav">
+            <img src="logo.png">
 
             <!-- MENU HAMBURGUER -->
-            <input id="menu-hamburguer" type="checkbox">
-            <label id="label-hamburguer" for="menu-hamburguer">
+            <input id="checkbox-hamburguer" type="checkbox">
+            <label onclick="abrirFecharMenu()" id="label-menu"  for="checkbox-hamburguer">
                 <div id="menu">
                     <span id="hamburguer"></span>
                 </div>
             </label>
             <!-- FIM MENU HAMBURGUER -->
 
-
-            <!-- MENU EXPANDIDO -->
-            <div id="menu-expandido">
-                <ul id="lista-menu">
-                    <li class="item-lista"> <a href="#">Cadastro</a> </li>
-                    <li class="item-lista"> <a href="#">Consulta</a> </li>
+            <!-- MENU HORIZONTAL -->
+            <div id="menu-horizontal">
+                <ul id="menu-horizontal-itens">
+                    <li class="menu-horizontal-item">Cadastrar</li>
+                    <li class="menu-horizontal-item">Consultar</li>
                 </ul>
             </div>
-            <!-- FIM MENU EXPANDIDO -->
-
+            <!-- FIM MENU HORIZONTAL -->
         </nav>
-        <!-- FIM MENU - NAVEGAÇÃO -->
 
+        <!-- MENU HAMBURGUER CONTEUDO-->
+        <div  id="menuExpandido">
+            <div id="div-menu">
+                <ul id="lista-menu">
+                    <li class="item-lista-menu">Cadastro</li>
+                    <li class="item-lista-menu">Consulta</li>
+                </ul>
+            </div>
+        </div>    
+        <!-- FIM MENU HAMBURGUER CONTEUDO-->
     </header>
-    <main>
+     
+    <div id="titulo">
+        <h1>Registro de nova despesa</h1>
+    </div>
 
+    <main>
+        <div id="container">
+            <div id="container-acima">
+                <div class="item-container" id="select-ano">
+                    <select name="" id="ano">
+                        <option>Ano</option>
+                        <option>2021</option>
+                        <option>2020</option>    
+                    </select>
+                </div>
+    
+                <div class="item-container" id="select-mes">
+                    <select name="" id="mes">
+                        <option>Mês</option>
+                        <option>Janeiro</option>
+                        <option>Fevereiro</option>
+                        <option>Março</option>  
+                        <option>Abril</option>
+                        <option>Maio</option>
+                        <option>Junho</option>
+                        <option>Julho</option>
+                        <option>Agosto</option>  
+                        <option>Setembro</option>  
+                        <option>Outubro</option>  
+                        <option>Novembro</option>  
+                        <option>Dezembro</option>  
+                    </select>
+                </div>
+    
+                <div class="item-container" id="dia">
+                    <input type="number" placeholder="Dia">
+                </div>
+    
+                <div class="item-container" id="select-tipo">
+                    <select name="" id="mes">
+                        <option>Tipo</option>
+                        <option></option>
+                        <option></option>        
+                    </select>
+                </div>
+    
+            </div>
+            <div id="container-abaixo">
+    
+                <div class="item-container" id="descricao">
+                    <input type="text" placeholder="Descrição">
+                </div>
+    
+                <div class="item-container" id="valor">
+                    <input type="number" placeholder="Valor">    
+                </div>
+
+                <button style="border:none;" class="item-container">
+                    <i class="fas fa-plus-square"></i>
+                </button>
+    
+                
+                
+                
+                
+                
+                
+    
+            </div>
+        </div>
     </main>
+    
+    
+
+
+
+
+
+
+
+   
+
+    <script src="script.js"></script>
+
 </body>
 </html>

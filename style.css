@@ -1,120 +1,99 @@
+/** ----------------------------------------------------------- */
+/** ---------------- FORMATAÇÃO GLOBAL ---------------- */
 *{
-	margin: 0px;
-	padding: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
-html, body {
-    margin: 0px;
-    padding: 0px;
-    min-width:100%;
+body, html{
+    width: 100%;
+    height: 100%;
+    font-family: "Trbuchet MS", Helvetica, sans-serif;
+
 }
 
 body{
-    font-family: "Trbuchet MS", Helvetica, sans-serif;
+    font-size: 62.5%;
+    
 }
 
-a{
-    text-decoration: none;
+header{
+    background-color: rgb(31,132,255);
+    width: 100%;
+    position: relative;
 }
 
 ul{
     list-style: none;
 }
 
-#barra-menu{
-    position: relative;
-    height: 45px;
-    background-color: #1F84FF;
-    padding: 10px 90px;
-}
-
-#logo{
-    margin-top: -1px;
-}
-
-ul#menu-lateral-itens{
-    line-height: 39px;
-    float: right;
-}
-
-ul li.menu-lateral-intem{
-    float: left;
-    padding-left: 35px;
-
-}
-
-li.menu-lateral-intem a{
-    font-size: 20px;
-    color: #fff;
-    font-weight: 100;
-}
-
-li.menu-lateral-intem a:hover{
-    padding-bottom: 5px;
-    border-bottom: 1px solid #fff;
-}
-
-#menu{
-    cursor: pointer;
-    float: right;
-    width: 38px;
-    height: 40px;
-}
-
-#menu-expandido{
-    position: absolute;
-    margin-top: 65.3px;
-    height: 0px;
-    background-color: #1F84FF;
-    padding: 0px 90px;
-    transition: .50s ease-in-out;
-    visibility: hidden;
-    left: 0;
-    right: 0;
-    top: 0;
-}
-
-#lista-menu{
-    position: relative;
-    top: 25px;
-    font-size: 25px;
+a{
     text-decoration: none;
-    padding-top: 7px;
-    font-weight: 600;
-    /* opacity: 0;
-    visibility: hidden;
-    transition: .27s ease-in-out; */
 }
 
-.item-lista{
-    padding-bottom: 10px;
+
+/** ---------------- FORMATAÇÃO GLOBAL ---------------- */
+/** ----------------------------------------------------------- */
+
+
+
+
+
+/** ----------------------------------------------------------- */
+/** ---------------- BARRA DE NAVEGAÇÃO ---------------- */
+
+/*#      NAV        */
+#nav{
+    max-width: 51%;
+    margin: auto;
+    height: 8vh;
+    max-height: 55px;
+    min-height: 45px;
+    display: flex;
 }
+/*#   FIM NAV      */
 
-.item-lista a{
-    color: #fff;
+
+
+
+/*#        LOGO          */
+nav img{
+    width: 2vw;
+    min-width: 33px;
+    align-self: center;
 }
+/*#       FIM LOGO       */
 
-.item-lista a:hover{
-    color: blue;
-}
 
-#div-hamburguer{
-    position: relative;
 
-}
 
-#label-hamburguer{
+
+/*.                            HAMBURGUER                                */
+#checkbox-hamburguer{
     display: none;
 }
 
+#label-menu{
+    position: relative;
+    width: 6.0vw;
+    min-width: 28px;
+    max-width: 35px;
+    margin-left: auto;
+    align-self: center;
+    cursor: pointer;
+}
+
+#menu{
+    height: 40px;
+}
+
 #hamburguer{
+    top: 19px;
     position: relative;
     display: block;
-    background: #fff;
+    background-color: #fff;
     height: 2px;
-    top: 19px;
-    transition: .5s ease-in-out;
-
+    transition: .4s ease-in-out;
 }
 
 #hamburguer::before,
@@ -125,106 +104,557 @@ li.menu-lateral-intem a:hover{
     width: 100%;
     height: 100%;
     position: absolute;
-    transition: .5s ease-in-out;
+    transition: .4s ease-in-out;
 }
 
 #hamburguer::before{
-    top: -11px;
+    top: -10px;
 }
+
 #hamburguer::after{
-    bottom: -11px;
+    bottom: -10px;
 }
 
-input#menu-hamburguer{
-    display: none;
-}
-
-input#menu-hamburguer:checked ~ label #hamburguer{
+input#checkbox-hamburguer:checked ~ label #hamburguer{
     transform: rotate(45deg);
 }
 
-input#menu-hamburguer:checked ~ label #hamburguer::before{
+input#checkbox-hamburguer:checked ~ label #hamburguer::before{
     transform: rotate(90deg);
-    top: 0;
+    top: 0px;
 }
 
-input#menu-hamburguer:checked ~ label #hamburguer::after{
+input#checkbox-hamburguer:checked ~ label #hamburguer::after{
     transform: rotate(90deg);
-    bottom: 0;
+    bottom: 0px;
+}
+/*.                          FIM HAMBURGUER                                */
+
+
+
+/*.                           CONTEUDO HAMBURGUER                                */
+#menuExpandido{
+    background-color: rgb(31,132,255);
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    z-index: 2;
 }
 
-input#menu-hamburguer:checked ~ div#menu-expandido{
-    height: 130px;
-    transition: .50s ease-in-out;
-    visibility: visible;
+
+#div-menu{
+    max-width: 70%;
+    margin: auto;
 }
 
-/* teste */
+#lista-menu{
+    padding-top: 24px;
+}
+
+.item-lista-menu{
+    padding-bottom:7px;
+    color: #fff;
+}
+/*.                          FIM CONTEUDO HAMBURGUER                                */
 
 
 
+
+
+/*;             MENU HORIZONTAL            */
+#menu-horizontal{
+    width: 50%;
+    font-size: 20px;
+    align-self: center;
+    margin-left: auto;
+}
+
+#menu-horizontal-itens{
+    float: right;
+
+}
+.menu-horizontal-item{
+    display: inline-block;
+    padding-left: 20px;
+    color: #fff;
+}
+/*;           FIM MENU HORIZONTAL            */
+
+/** ---------------- FIM BARRA DE NAVEGAÇÃO ---------------- */
+/** ----------------------------------------------------------- */
+
+
+
+
+
+#titulo{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 15%;
+}
+
+h1{
+    font-size: 4.6vw;
+    font-weight: 100;
+    font-family: Segoe UI;
+}
+
+
+
+/** ----------------------------------------------------------- */
+/** ---------------- CONTEUDO ---------------- */
+main{
+    position: relative;
+    height: 20%;
+    top: 16%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+ main #container{
+    width: 51%;
+    padding: 0px ;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border: solid 2px rgb(207, 207, 207);
+    border-radius: 15px;
+    box-shadow: 2px 2px 8px rgb(129, 129, 129);
+ }
+
+
+main #container-acima{
+    position: relative;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    margin-bottom: 7px;
+}
+
+main #container-abaixo{
+    align-self: flex-start;
+    position: relative;
+    /* border: 1px solid blue; */
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.item-container{
+    border: 1px solid rgb(207, 206, 206);
+    border-radius: 7px;
+    width: 6vw;
+    height: 4vh;
+    display: flex;
+}
+
+select{
+    padding-left: 10px;
+    border: none;
+    width: 100%;
+    font-size: 1vw;
+    color: rgb(145, 143, 143);
+    background: url('seta.png') no-repeat center right;
+    background-size: 18px;
+    background-position: 200;    
+
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+            appearance: none; /*provavelmente será implementado no futuro*/
+}
+
+.item-container input{
+    padding-left: 10px;
+    width: 100%;
+    border: none;
+    /* border: 4px solid red; */
+    border-radius: 7px;
+    font-size: 1vw;
+    color: rgb(145, 143, 143);
+}
+
+#select-tipo{
+    width: 26vw;
+}
+
+#descricao{
+    border: 1;
+    width: 30vw;
+}
+
+#valor{
+    width: 13vw;
+}
+
+#mais{
+    width: 3vw;
+    position: relative;
+}
+
+.btn{
+    width: 100%;
+}
+
+i{
+    font-size: 41px;
+    color:rgb(31,132,255);
+}
+
+button{
+    border: none;
+    cursor: pointer;
+}
+/** ---------------- FIM CONTEUDO ---------------- */
+/** ----------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+/** ----------------------------------------------------------- */
+/** ---------------- MEDIA QUERIES ---------------- */
  /* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
+@media (max-width: 575.98px) { 
 
-    #label-hamburguer{
-        display: inline;
-    }
-
-    #menu-lateral-itens{
+    #menu-horizontal{
         display: none;
     }
 
-    input#menu-hamburguer:checked ~ div#menu-expandido{
-
+    main #container{
+        width: 80%;
+        border: none;
+        box-shadow: none;
     }
-    
+
+    div#container-acima{
+        flex-wrap: wrap;
+    }
+
+    div#container-abaixo{
+        flex-wrap: wrap;
+    }
+
+    .item-container{
+        width: 100%;
+        margin-bottom: 5px;
+        height: 40px;
+    }
+
+    #select-tipo, #descricao{
+        width: 100%;
+    }
+
+
+    #valor{
+        width: 80%;
+    }
+
+    select{
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #dia input, #descricao input, #valor input{
+        font-size: 14px;
+    }
+
+    h1{
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    nav#nav{
+        max-width: 72%;
+    }
+
+    i{
+        margin-top: -3px;
+        font-size: 45px;
+    }
+
+    button.item-container{
+        width: 40px;
+    }
+
  }
+
+
+
 
  /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) { 
-
-    #label-hamburguer{
-        display: inline;
-    }
     
-    #menu-lateral-itens{
+    /* MENU HORIZONTAL */
+    #menu-horizontal{
         display: none;
     }
+    /* FIM MENU HORIZONTAL */
+    
+    
+    
+    /* CONTEUDO MAIN */
+    main #container{
+        width: 80%;
+        border: none;
+        box-shadow: none;
+    }
 
-    input#menu-hamburguer:checked ~ div#menu-expandido{
-        
+    div#container-acima{
+        flex-wrap: wrap;
+    }
+
+    div#container-abaixo{
+        flex-wrap: wrap;
+    }
+
+    .item-container{
+        width: 100%;
+        margin-bottom: 5px;
+        height: 40px;
+    }
+
+    #select-tipo, #descricao{
+        width: 100%;
+    }
+
+
+    #valor{
+        width: 80%;
+    }
+
+    select{
+        width: 100%;
+        font-size: 14px;
+    }
+
+    #dia input, #descricao input, #valor input{
+        font-size: 14px;
+    }
+
+    h1{
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    nav#nav{
+        max-width: 72%;
+    }
+
+    i{
+        margin-top: -3px;
+        font-size: 45px;
+    }
+
+    button.item-container{
+        width: 40px;
     }
     
-    
+
+    /* FIM CONTEUDO MAIN */
+
  }
+
+
+
+
 
  /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) { 
-    #label-hamburguer{
-        display: inline;
-    }
-
-    #menu-lateral-itens{
+    @media (min-width: 768px) and (max-width: 991.98px) { 
+    #menu-horizontal{
         display: none;
     }
 
+    main #container{
+        width: 80%;
+        border: none;
+        box-shadow: none;
+    }
+
+    div#container-acima{
+        flex-wrap: wrap;
+    }
+
+    div#container-abaixo{
+        flex-wrap: wrap;
+    }
+
+    .item-container{
+        width: 100%;
+        margin-bottom: 5px;
+        height: 60px;
+    }
+
+    #select-tipo, #descricao{
+        width: 100%;
+    }
+
+
+    #valor{
+        width: 80%;
+    }
+
+    select{
+        width: 100%;
+        font-size: 19px;
+    }
+
+    #dia input, #descricao input, #valor input{
+        font-size: 19px;
+    }
+
+    h1{
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    nav#nav{
+        max-width: 72%;
+    }
+
+    i{
+        margin-top: -3px;
+        font-size: 65px;
+    }
+
+    button.item-container{
+        width: 60px;
+    }
+    
+
  }
+
+
 
  /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) { 
 
-    input#menu-hamburguer:checked ~ div#menu-expandido{
+    #label-menu{
         display: none;
     }
 
+    nav#nav{
+        max-width: 75%;
+    }
+
+    h1{
+        font-size: 60px;
+    }
+
+    main #container{
+        width: 75%;
+    }
+
+
+    .item-container{
+        height: 45px;
+    }
+
+    #select-tipo{
+        width: 50%;
+    }
+
+    #select-ano, #select-mes, #dia{
+        width: 15%;
+    }
     
+    #descricao{
+        width: 68%;
+    }
+    
+    #valor{
+        width: 20%;
+        
+    }
+
+    select{
+        font-size: 19px;
+    }
+
+    #dia input, #descricao input, #valor input{
+        font-size: 19px;
+    }
+
+
+    i{
+        font-size: 45px;
+    }
+
+    button.item-container{
+        position: relative;
+        width: 6%;
+    }
  }
 
  /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
 
-    input#menu-hamburguer:checked ~ div#menu-expandido{
+    nav#nav{
+        min-width: 900px;
+    }
+
+    div#container{
+        min-width: 900px;
+        height: 200px;
+    }
+
+    .item-container{
+        height: 50px;
+    }
+
+    #label-menu{
         display: none;
     }
 
+    #select-tipo{
+        max-width: 350px;
+    }
+    
+    select#ano, select#mes, #dia input, #descricao input, #valor input{
+        font-size: 20px;
+    }
+
+    #select-ano, #select-mes, #dia{
+        min-width: 17%;
+        max-width: 250px;
+    }
+
+    #descricao{
+        min-width: 550px;
+    }
+
+    #valor{
+        width: 200px;
+    }
+
+    button.item-container{
+        position: relative;
+        width: 5%;
+        padding: 0;
+        border: none;
+        background: none;
+    }
+
+    i{
+        font-size: 48px;
+    }
+
  }
+/** ---------------- FIM MEDIA QUERIES ---------------- */
+/** ----------------------------------------------------------- */
