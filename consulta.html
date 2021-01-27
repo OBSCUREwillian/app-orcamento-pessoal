@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <title>Consulta</title>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <img src="logo.png">
+
+            <!-- MENU HAMBURGUER -->
+            <input id="checkbox-hamburguer" type="checkbox">
+            <label onclick="abrirFecharMenu()" id="label-menu"  for="checkbox-hamburguer">
+                <div id="menu">
+                    <span id="hamburguer"></span>
+                </div>
+            </label>
+            <!-- FIM MENU HAMBURGUER -->
+
+            <!-- MENU HORIZONTAL -->
+            <div id="menu-horizontal">
+                <ul id="menu-horizontal-itens">
+                    <li class="menu-horizontal-item">Cadastrar</li>
+                    <li class="menu-horizontal-item">Consultar</li>
+                </ul>
+            </div>
+            <!-- FIM MENU HORIZONTAL -->
+        </nav>
+
+        <!-- MENU HAMBURGUER CONTEUDO-->
+        <div  id="menuExpandido">
+            <div id="div-menu">
+                <ul id="lista-menu">
+                    <li class="item-lista-menu">Cadastro</li>
+                    <li class="item-lista-menu">Consulta</li>
+                </ul>
+            </div>
+        </div>    
+        <!-- FIM MENU HAMBURGUER CONTEUDO-->
+    </header>
+
+
+        <div class="container">
+            <div class="item ano">
+                <Select id="ano">
+                    <option value="">Ano</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </Select>
+            </div>
+    
+            <div class="item mes">
+                <Select id="mes">
+                    <option value="">Mês</option>
+                    <option value="">Janeiro</option>
+                    <option value="">Fevereiro</option>
+                    <option value="">Março</option>
+                    <option value="">Abril</option>
+                    <option value="">Maio</option>
+                    <option value="">Junho</option>
+                    <option value="">Julho</option>
+                    <option value="">Agosto</option>
+                    <option value="">Setembro</option>
+                    <option value="">Outubro</option>
+                    <option value="">Novembro</option>
+                    <option value="">Dezembro</option>
+    
+                </Select>
+            </div>
+    
+            <div class="item dia">
+                <input id="dia" type="number" placeholder="Dia">
+            </div>
+    
+            <div class="item tipo">
+                <select id="tipo">
+                    <option value="">Tipo</option>
+                    <option value="">Alimentação</option>
+                    <option value="">Educação</option>
+                    <option value="">Lazer</option>
+                    <option value="">Saúde</option>
+                    <option value="">Transporte</option>
+                </select>
+            </div>
+    
+            <div class="item2 descricao">
+                <input id="descricao" type="text" placeholder="Descrição">
+            </div>
+    
+            <div class="item2 valor">
+                <input id="valor" type="number" placeholder="Valor">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

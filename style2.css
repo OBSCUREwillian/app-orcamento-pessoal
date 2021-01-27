@@ -1,0 +1,411 @@
+/** ----------------------------------------------------------- */
+/** ---------------- FORMATAÇÃO GLOBAL ---------------- */
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+    font-family: "Trbuchet MS", Helvetica, sans-serif;
+
+}
+
+body{
+    font-size: 62.5%;
+    
+}
+
+header{
+    background-color: rgb(31,132,255);
+    width: 100%;
+    position: relative;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/** ---------------- FORMATAÇÃO GLOBAL ---------------- */
+/** ----------------------------------------------------------- */
+
+
+
+
+
+/** ----------------------------------------------------------- */
+/** ---------------- BARRA DE NAVEGAÇÃO ---------------- */
+
+/*#      NAV        */
+#nav{
+    max-width: 80%;
+    margin: auto;
+    height: 8vh;
+    max-height: 55px;
+    min-height: 45px;
+    display: flex;
+}
+/*#   FIM NAV      */
+
+
+
+
+/*#        LOGO          */
+nav img{
+    width: 2vw;
+    min-width: 33px;
+    align-self: center;
+}
+/*#       FIM LOGO       */
+
+
+
+
+
+/*.                            HAMBURGUER                                */
+#checkbox-hamburguer{
+    display: none;
+}
+
+#label-menu{
+    position: relative;
+    width: 6.0vw;
+    min-width: 28px;
+    max-width: 35px;
+    margin-left: auto;
+    align-self: center;
+    cursor: pointer;
+}
+
+#menu{
+    height: 40px;
+}
+
+#hamburguer{
+    top: 19px;
+    position: relative;
+    display: block;
+    background-color: #fff;
+    height: 2px;
+    transition: .4s ease-in-out;
+}
+
+#hamburguer::before,
+#hamburguer::after{
+    background: #fff;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .4s ease-in-out;
+}
+
+#hamburguer::before{
+    top: -10px;
+}
+
+#hamburguer::after{
+    bottom: -10px;
+}
+
+input#checkbox-hamburguer:checked ~ label #hamburguer{
+    transform: rotate(45deg);
+}
+
+input#checkbox-hamburguer:checked ~ label #hamburguer::before{
+    transform: rotate(90deg);
+    top: 0px;
+}
+
+input#checkbox-hamburguer:checked ~ label #hamburguer::after{
+    transform: rotate(90deg);
+    bottom: 0px;
+}
+/*.                          FIM HAMBURGUER                                */
+
+
+
+/*.                           CONTEUDO HAMBURGUER                                */
+#menuExpandido{
+    background-color: rgb(31,132,255);
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    z-index: 2;
+}
+
+
+#div-menu{
+    max-width: 70%;
+    margin: auto;
+}
+
+#lista-menu{
+    padding-top: 24px;
+}
+
+.item-lista-menu{
+    padding-bottom:7px;
+    color: #fff;
+}
+/*.                          FIM CONTEUDO HAMBURGUER                                */
+
+
+
+
+
+/*;             MENU HORIZONTAL            */
+#menu-horizontal{
+    width: 50%;
+    font-size: 20px;
+    align-self: center;
+    margin-left: auto;
+}
+
+#menu-horizontal-itens{
+    float: right;
+
+}
+.menu-horizontal-item{
+    display: inline-block;
+    padding-left: 20px;
+    color: #fff;
+}
+/*;           FIM MENU HORIZONTAL            */
+
+/** ---------------- FIM BARRA DE NAVEGAÇÃO ---------------- */
+/** ----------------------------------------------------------- */
+
+
+
+
+
+
+
+
+/** ----------------------------------------------------------- */
+/** ---------------- CONTAINER MAIN ---------------- */
+
+
+.container{
+    position: relative;
+    top: 270px;
+    background-color: rgb(221, 221, 221);
+    border: 0.01px solid rgb(204, 204, 204);
+    box-shadow: 4px 4px 10px rgb(180, 180, 180);
+    border-radius: 8px;
+    width: 50%;
+    min-width: 600px;
+    padding: 50px;
+    margin: 0 auto;
+
+
+    display: grid;
+    grid-template-rows: repeat(2, 5vh);
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas:    "ano mes dia tipo"
+                            "descricao Valor . .";
+
+    grid-gap: 12px;
+}  
+
+
+.ano{ 
+    grid-area: "ano";
+
+} 
+
+.mes{
+    grid-area: "mes" ; 
+} 
+
+.dia{ 
+    grid-area: "dia";
+} 
+
+.tipo{ 
+    grid-area: "tipo";
+    grid-column-start: 4;
+    grid-column-end: 8;
+}
+
+
+.descricao{
+    grid-area: "descricao";
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 6;
+} 
+
+
+.valor{
+    grid-area: "valor"; 
+    grid-row-start: 2;
+
+}
+
+.ano, .mes, .dia, .valor{
+    min-width: 100px;
+
+}
+
+
+
+.item, .item2{
+    border: 2px solid rgb(212, 212, 212);
+    border-radius: 7px;
+    height: 46px;
+    display: flex;
+}
+
+
+
+#tipo, #mes, #ano, #dia, #descricao, #valor{
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    color: rgb(168, 168, 168);
+    border: none;
+    padding-left: 5px;
+
+}
+
+
+#dia, #descricao, #valor{
+    padding-left: 7px;
+}
+
+
+::placeholder{
+    color: rgb(168, 168, 168);
+
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(168, 168, 168);
+
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(168, 168, 168);
+
+}
+
+
+
+
+
+
+
+
+/** ---------------- FIM CONTAINER MAIN ---------------- */
+/** ----------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+/** ----------------------------------------------------------- */
+/** ---------------- MEDIA QUERIES ---------------- */
+ /* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+
+    #menu-horizontal{
+        display: none;
+    }
+
+    
+    .container{
+        width: 80%;
+        min-width: 0;
+        top: 80px;
+        padding: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+        justify-content: flex-end;
+        position: relative;
+    }  
+
+    
+
+    
+ }
+
+
+
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    
+    /* MENU HORIZONTAL */
+    #menu-horizontal{
+        display: none;
+    }
+    /* FIM MENU HORIZONTAL */
+
+
+    .container{
+        width: 80%;
+        min-width: 0;
+        top: 80px;
+        padding: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+        justify-content: flex-end;
+        position: relative;
+    } 
+ }
+
+
+
+
+
+ /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) and (max-width: 991.98px) { 
+    #menu-horizontal{
+        display: none;
+    }
+
+ }
+
+
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+    #label-menu{
+        display: none;
+    }
+
+ }
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+
+
+    #label-menu{
+        display: none;
+    }
+
+    
+ }
+/** ---------------- FIM MEDIA QUERIES ---------------- */
+/** ----------------------------------------------------------- */
