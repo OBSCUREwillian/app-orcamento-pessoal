@@ -12,7 +12,9 @@
 
     <header>
         <nav id="nav">
-            <img src="logo.png">
+                <a id="img" href="index.html">
+                    <img src="logo.png">
+                </a>
 
             <!-- MENU HAMBURGUER -->
             <input id="checkbox-hamburguer" type="checkbox">
@@ -26,8 +28,8 @@
             <!-- MENU HORIZONTAL -->
             <div id="menu-horizontal">
                 <ul id="menu-horizontal-itens">
-                    <li class="menu-horizontal-item">Cadastrar</li>
-                    <li class="menu-horizontal-item">Consultar</li>
+                    <li class="menu-horizontal-item"> <a href="index.html">Cadastrar</a> </li>
+                    <li class="menu-horizontal-item"> <a href="consulta.html">Consultar</a> </li>
                 </ul>
             </div>
             <!-- FIM MENU HORIZONTAL -->
@@ -37,96 +39,89 @@
         <div  id="menuExpandido">
             <div id="div-menu">
                 <ul id="lista-menu">
-                    <li class="item-lista-menu">Cadastro</li>
-                    <li class="item-lista-menu">Consulta</li>
+                    <li class="item-lista-menu"><a href="index.html">Cadastrar</a> </li>
+                    <li class="item-lista-menu"><a href="consulta.html">Consultar</a> </li>
+
                 </ul>
             </div>
         </div>    
         <!-- FIM MENU HAMBURGUER CONTEUDO-->
     </header>
-     
-    <div id="titulo">
-        <h1>Registro de nova despesa</h1>
-    </div>
+    
+    
+        <div id="titulo">
+            <h1>Registro de nova despesa</h1>
+        </div>
 
-    <main>
-        <div id="container">
-            <div id="container-acima">
-                <div class="item-container" id="select-ano">
-                    <select name="" id="ano">
-                        <option>Ano</option>
-                        <option>2021</option>
-                        <option>2020</option>    
-                    </select>
-                </div>
     
-                <div class="item-container" id="select-mes">
-                    <select name="" id="mes">
-                        <option>Mês</option>
-                        <option>Janeiro</option>
-                        <option>Fevereiro</option>
-                        <option>Março</option>  
-                        <option>Abril</option>
-                        <option>Maio</option>
-                        <option>Junho</option>
-                        <option>Julho</option>
-                        <option>Agosto</option>  
-                        <option>Setembro</option>  
-                        <option>Outubro</option>  
-                        <option>Novembro</option>  
-                        <option>Dezembro</option>  
-                    </select>
-                </div>
-    
-                <div class="item-container" id="dia">
-                    <input type="number" placeholder="Dia">
-                </div>
-    
-                <div class="item-container" id="select-tipo">
-                    <select name="" id="mes">
-                        <option>Tipo</option>
-                        <option></option>
-                        <option></option>        
-                    </select>
-                </div>
-    
-            </div>
-            <div id="container-abaixo">
-    
-                <div class="item-container" id="descricao">
-                    <input type="text" placeholder="Descrição">
-                </div>
-    
-                <div class="item-container" id="valor">
-                    <input type="number" placeholder="Valor">    
-                </div>
 
-                <button style="border:none;" class="item-container">
-                    <i class="fas fa-plus-square"></i>
-                </button>
     
+
+        <div id="modal" class="modal">
+            <div id="titulo-modal" class="titulo-modal">
                 
-                
-                
-                
-                
-                
-    
             </div>
         </div>
-    </main>
+
+        <div class="container">
+
+            <div class="item ano">
+                <Select id="ano" class="element">
+                    <option value="">Ano</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </Select>
+            </div>
     
+            <div class="item mes">
+                <Select id="mes" class="element">
+                    <option value="">Mês</option>
+                    <option value="01">Janeiro</option>
+                    <option value="02">Fevereiro</option>
+                    <option value="03">Março</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Maio</option>
+                    <option value="06">Junho</option>
+                    <option value="07">Julho</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </Select>
+            </div>
     
+            <div class="item dia" >
+                <input class="element" id="dia" type="number" placeholder="Dia">
+            </div>
+    
+            <div class="item tipo">
+                <select id="tipo" class="element">
+                    <option value="">Tipo</option>
+                    <option value="alimentacao">Alimentação</option>
+                    <option value="educacao">Educação</option>
+                    <option value="lazer">Lazer</option>
+                    <option value="saude">Saúde</option>
+                    <option value="transporte">Transporte</option>
+                </select>
+            </div>
+    
+            <div class="item2 descricao">
+                <input class="element" id="descricao" type="text" placeholder="Descrição">
+            </div>
+    
+            <div class="item2 valor">
+                <input class="element" id="valor" type="number" placeholder="Valor">
+            </div>
+    
+            <div class="item2 consultar">
+                <button onclick="cadastrarDespesa()" style="cursor:pointer;" id="btn-consultar">Cadastrar</button>
+            </div>
+        </div>
 
+    <script type="module" src="./scripts/scriptIndex.js"></script>
 
-
-
-
-
-
-   
-
-    <script src="script.js"></script>
+    <script src="./scripts/script.js"></script>
 
 </body>
 </html>

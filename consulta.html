@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style2.css">
     <title>Consulta</title>
+    <script src="https://kit.fontawesome.com/ba6e00a3e9.js" crossorigin="anonymous"></script>
+    <script type="module" src="./scripts/scriptConsulta.js"></script>
 </head>
-<body>
+<body onload="carregarDespesas()">
+    
     <header>
         <nav id="nav">
-            <img src="logo.png">
+            <a id="img" href="index.html">
+                <img src="logo.png">
+            </a>
 
             <!-- MENU HAMBURGUER -->
             <input id="checkbox-hamburguer" type="checkbox">
@@ -23,8 +28,9 @@
             <!-- MENU HORIZONTAL -->
             <div id="menu-horizontal">
                 <ul id="menu-horizontal-itens">
-                    <li class="menu-horizontal-item">Cadastrar</li>
-                    <li class="menu-horizontal-item">Consultar</li>
+                    <li class="menu-horizontal-item"> <a href="index.html">Cadastrar</a> </li>
+                    <li class="menu-horizontal-item"> <a href="consulta.html">Consultar</a> </li>
+                    
                 </ul>
             </div>
             <!-- FIM MENU HORIZONTAL -->
@@ -34,67 +40,98 @@
         <div  id="menuExpandido">
             <div id="div-menu">
                 <ul id="lista-menu">
-                    <li class="item-lista-menu">Cadastro</li>
-                    <li class="item-lista-menu">Consulta</li>
+                    <li class="item-lista-menu"><a href="index.html">Cadastrar</a> </li>
+                    <li class="item-lista-menu"><a href="consulta.html">Consultar</a> </li>
                 </ul>
             </div>
         </div>    
         <!-- FIM MENU HAMBURGUER CONTEUDO-->
     </header>
 
+    <div id="titulo">
+        <h1>Consulta</h1>
+    </div>
 
-        <div class="container">
-            <div class="item ano">
-                <Select id="ano">
-                    <option value="">Ano</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                </Select>
-            </div>
-    
-            <div class="item mes">
-                <Select id="mes">
-                    <option value="">Mês</option>
-                    <option value="">Janeiro</option>
-                    <option value="">Fevereiro</option>
-                    <option value="">Março</option>
-                    <option value="">Abril</option>
-                    <option value="">Maio</option>
-                    <option value="">Junho</option>
-                    <option value="">Julho</option>
-                    <option value="">Agosto</option>
-                    <option value="">Setembro</option>
-                    <option value="">Outubro</option>
-                    <option value="">Novembro</option>
-                    <option value="">Dezembro</option>
-    
-                </Select>
-            </div>
-    
-            <div class="item dia">
-                <input id="dia" type="number" placeholder="Dia">
-            </div>
-    
-            <div class="item tipo">
-                <select id="tipo">
-                    <option value="">Tipo</option>
-                    <option value="">Alimentação</option>
-                    <option value="">Educação</option>
-                    <option value="">Lazer</option>
-                    <option value="">Saúde</option>
-                    <option value="">Transporte</option>
-                </select>
-            </div>
-    
-            <div class="item2 descricao">
-                <input id="descricao" type="text" placeholder="Descrição">
-            </div>
-    
-            <div class="item2 valor">
-                <input id="valor" type="number" placeholder="Valor">
-            </div>
+    <div class="container">
+        <div class="item ano">
+            <Select id="ano">
+                <option value="">Ano</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+            </Select>
         </div>
 
+        <div class="item mes">
+            <Select id="mes">
+                <option value="">Mês</option>
+                <option value="01">Janeiro</option>
+                <option value="02">Fevereiro</option>
+                <option value="03">Março</option>
+                <option value="04">Abril</option>
+                <option value="05">Maio</option>
+                <option value="06">Junho</option>
+                <option value="07">Julho</option>
+                <option value="08">Agosto</option>
+                <option value="09">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+
+            </Select>
+        </div>
+
+        <div class="item dia">
+            <input id="dia" type="number" placeholder="Dia">
+        </div>
+
+        <div class="item tipo">
+            <select id="tipo">
+                <option value="">Tipo</option>
+                <option value="alimentacao">Alimentação</option>
+                <option value="educacao">Educação</option>
+                <option value="lazer">Lazer</option>
+                <option value="saude">Saúde</option>
+                <option value="transporte">Transporte</option>
+            </select>
+        </div>
+
+        <div class="item2 descricao">
+            <input id="descricao" type="text" placeholder="Descrição">
+        </div>
+
+        <div class="item2 valor">
+            <input id="valor" type="number" placeholder="Valor">
+        </div>
+
+        <div class="item2 consultar">
+            <button onclick="pesquisarDespesas()" style="cursor:pointer;" type="submit" id="btn-consultar">Consultar</button>
+        </div>
+
+    </div>
+
+    <div id="container-tabela">
+
+        <div class="border-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Tipo</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="lista-despesas">
+                    
+                </tbody>
+            </table>
+        </div>
+
+        
+    </div>
+
+    
 
 
 
@@ -104,7 +141,6 @@
 
 
 
-
-    <script src="script.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>

@@ -29,7 +29,10 @@ ul{
 
 a{
     text-decoration: none;
+    color: #fff;
 }
+
+
 
 
 /** ---------------- FORMATAÇÃO GLOBAL ---------------- */
@@ -61,6 +64,10 @@ nav img{
     width: 2vw;
     min-width: 33px;
     align-self: center;
+}
+a#img{
+    align-self: center;
+    cursor: pointer;
 }
 /*#       FIM LOGO       */
 
@@ -191,7 +198,7 @@ input#checkbox-hamburguer:checked ~ label #hamburguer::after{
     display: flex;
     justify-content: center;
     position: relative;
-    top: 15%;
+    top: 5%;
 }
 
 h1{
@@ -202,124 +209,131 @@ h1{
 
 
 
+
+
 /** ----------------------------------------------------------- */
-/** ---------------- CONTEUDO ---------------- */
-main{
-    position: relative;
-    height: 20%;
-    top: 16%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-}
- main #container{
-    width: 51%;
-    padding: 0px ;
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border: solid 2px rgb(207, 207, 207);
-    border-radius: 15px;
-    box-shadow: 2px 2px 8px rgb(129, 129, 129);
- }
+/** ---------------- CONTAINER MAIN ---------------- */
 
 
-main #container-acima{
+.container{
     position: relative;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-self: flex-end;
-    margin-bottom: 7px;
-}
+    top: 70px;
+    background-color: rgb(248, 248, 248);
+    border: 0.01px solid rgb(204, 204, 204);
+    box-shadow: 4px 4px 10px rgb(180, 180, 180);
+    border-radius: 8px;
+    width: 50%;
+    min-width: 600px;
+    padding: 40px;
+    margin: 0 auto;
 
-main #container-abaixo{
-    align-self: flex-start;
-    position: relative;
-    /* border: 1px solid blue; */
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: repeat(2, 5vh);
+    grid-template-columns: repeat(7, 1fr);
+
+    grid-gap: 12px;
+}  
+
+
+.tipo{ 
+    grid-column-start: 4;
+    grid-column-end: 8;
 }
 
 
-.item-container{
+.descricao{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 6;
+} 
+
+
+.valor{
+    grid-row-start: 2;
+
+}
+
+
+.ano, .mes, .dia, .valor, .consultar{
+    min-width: 100px;
+}
+
+
+.item, .item2{
     border: 1px solid rgb(207, 206, 206);
+
     border-radius: 7px;
-    width: 6vw;
-    height: 4vh;
+    height: 46px;
     display: flex;
 }
 
-select{
-    padding-left: 10px;
-    border: none;
+.consultar{
+    background-color: rgb(31,132,255);
+}
+
+
+#tipo, #mes, #ano, #dia, #descricao, #valor, #btn-consultar{
     width: 100%;
-    font-size: 1vw;
-    color: rgb(145, 143, 143);
-    background: url('seta.png') no-repeat center right;
-    background-size: 18px;
-    background-position: 200;    
-
-    -ms-appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-            appearance: none; /*provavelmente será implementado no futuro*/
-}
-
-.item-container input{
-    padding-left: 10px;
-    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    color: rgb(168, 168, 168);
     border: none;
-    /* border: 4px solid red; */
-    border-radius: 7px;
-    font-size: 1vw;
-    color: rgb(145, 143, 143);
+    padding-left: 5px;
+
 }
 
-#select-tipo{
-    width: 26vw;
+
+#dia, #descricao, #valor{
+    padding-left: 7px;
 }
 
-#descricao{
-    border: 1;
-    width: 30vw;
+#btn-consultar{
+    background: none;
+    color: #fff;
+    padding-left: 0;
 }
 
-#valor{
-    width: 13vw;
+
+::placeholder{
+    color: rgb(168, 168, 168);
+
 }
 
-#mais{
-    width: 3vw;
-    position: relative;
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(168, 168, 168);
+
 }
 
-.btn{
-    width: 100%;
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(168, 168, 168);
+
 }
 
-i{
-    font-size: 41px;
-    color:rgb(31,132,255);
-}
 
-button{
-    border: none;
-    cursor: pointer;
-}
-/** ---------------- FIM CONTEUDO ---------------- */
+/** ---------------- FIM CONTAINER MAIN ---------------- */
 /** ----------------------------------------------------------- */
 
 
 
+
+.modal{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    top: 70px;
+    position: relative;
+    align-items: center;
+}
+
+.titulo-modal{
+    width: 880px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
 
 
 
@@ -333,66 +347,48 @@ button{
  /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) { 
 
+    
     #menu-horizontal{
         display: none;
     }
 
-    main #container{
-        width: 80%;
-        border: none;
-        box-shadow: none;
-    }
-
-    div#container-acima{
-        flex-wrap: wrap;
-    }
-
-    div#container-abaixo{
-        flex-wrap: wrap;
-    }
-
-    .item-container{
-        width: 100%;
-        margin-bottom: 5px;
-        height: 40px;
-    }
-
-    #select-tipo, #descricao{
-        width: 100%;
-    }
-
-
-    #valor{
-        width: 80%;
-    }
-
-    select{
-        width: 100%;
-        font-size: 14px;
-    }
-
-    #dia input, #descricao input, #valor input{
-        font-size: 14px;
-    }
-
-    h1{
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    nav#nav{
+    #nav{
         max-width: 72%;
     }
 
-    i{
-        margin-top: -3px;
-        font-size: 45px;
+    .container{
+        width: 72%;
+        min-width: 0;
+        top: 50px;
+        padding: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+        justify-content: flex-end;
+        position: relative;
+        grid-gap: 3px;
+
+    }  
+    h1{
+        font-size: 22px;
     }
 
-    button.item-container{
-        width: 40px;
+    .item, .item2{
+        height: 50px;
+
+    }
+    #tipo, #mes, #ano, #dia, #descricao, #valor{
+        font-size: 16px;
     }
 
+    .titulo-modal{
+        margin-top: 20px;
+        width: 68.6%;
+        margin-bottom: 40px;
+        height: 20px;
+        font-size: 2.5vw;
+    }
  }
 
 
@@ -406,69 +402,38 @@ button{
         display: none;
     }
     /* FIM MENU HORIZONTAL */
-    
-    
-    
-    /* CONTEUDO MAIN */
-    main #container{
-        width: 80%;
-        border: none;
-        box-shadow: none;
-    }
-
-    div#container-acima{
-        flex-wrap: wrap;
-    }
-
-    div#container-abaixo{
-        flex-wrap: wrap;
-    }
-
-    .item-container{
-        width: 100%;
-        margin-bottom: 5px;
-        height: 40px;
-    }
-
-    #select-tipo, #descricao{
-        width: 100%;
-    }
 
 
-    #valor{
-        width: 80%;
-    }
-
-    select{
-        width: 100%;
-        font-size: 14px;
-    }
-
-    #dia input, #descricao input, #valor input{
-        font-size: 14px;
-    }
-
-    h1{
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    nav#nav{
+        #nav{
         max-width: 72%;
     }
-
-    i{
-        margin-top: -3px;
-        font-size: 45px;
-    }
-
-    button.item-container{
-        width: 40px;
-    }
     
+    .container{
+        width: 72%;
+        min-width: 0;
+        top: 80px;
+        padding: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+        justify-content: flex-end;
+        position: relative;
+        grid-gap: 3px;
 
-    /* FIM CONTEUDO MAIN */
+    }  
 
+    .item, .item2{
+        height: 50px;
+    }
+
+    #tipo, #mes, #ano, #dia, #descricao, #valor{
+        font-size: 16px;
+    }
+
+    .titulo-modal{
+        width: 68.6%;
+    }
  }
 
 
@@ -481,62 +446,37 @@ button{
         display: none;
     }
 
-    main #container{
-        width: 80%;
-        border: none;
-        box-shadow: none;
-    }
-
-    div#container-acima{
-        flex-wrap: wrap;
-    }
-
-    div#container-abaixo{
-        flex-wrap: wrap;
-    }
-
-    .item-container{
-        width: 100%;
-        margin-bottom: 5px;
-        height: 60px;
-    }
-
-    #select-tipo, #descricao{
-        width: 100%;
-    }
-
-
-    #valor{
-        width: 80%;
-    }
-
-    select{
-        width: 100%;
-        font-size: 19px;
-    }
-
-    #dia input, #descricao input, #valor input{
-        font-size: 19px;
-    }
-
-    h1{
-        font-size: 36px;
-        margin-bottom: 10px;
-    }
-
-    nav#nav{
+    #nav{
         max-width: 72%;
     }
-
-    i{
-        margin-top: -3px;
-        font-size: 65px;
-    }
-
-    button.item-container{
-        width: 60px;
-    }
     
+    .container{
+        width: 72%;
+        min-width: 0;
+        top: 80px;
+        padding: 0;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        box-shadow: none;
+        justify-content: flex-end;
+        position: relative;
+        grid-gap: 3px;
+
+    }  
+
+    .item, .item2{
+        height: 60px;
+
+    }
+    #tipo, #mes, #ano, #dia, #descricao, #valor{
+        font-size: 18px;
+    }
+
+    .titulo-modal{
+        width: 69%;
+        
+    }
 
  }
 
@@ -549,112 +489,46 @@ button{
         display: none;
     }
 
-    nav#nav{
+    #nav{
         max-width: 75%;
     }
 
-    h1{
-        font-size: 60px;
+    .container{
+        min-width: 68%;
+        top: 80px;
     }
 
-    main #container{
-        width: 75%;
-    }
-
-
-    .item-container{
-        height: 45px;
-    }
-
-    #select-tipo{
-        width: 50%;
-    }
-
-    #select-ano, #select-mes, #dia{
-        width: 15%;
-    }
-    
-    #descricao{
-        width: 68%;
-    }
-    
-    #valor{
-        width: 20%;
+    .titulo-modal{
+        width: 73.6%;
+        margin-top: 35px;
         
     }
+    
 
-    select{
-        font-size: 19px;
-    }
-
-    #dia input, #descricao input, #valor input{
-        font-size: 19px;
-    }
-
-
-    i{
-        font-size: 45px;
-    }
-
-    button.item-container{
-        position: relative;
-        width: 6%;
-    }
  }
 
  /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
 
-    nav#nav{
+    #nav{
         min-width: 900px;
-    }
-
-    div#container{
-        min-width: 900px;
-        height: 200px;
-    }
-
-    .item-container{
-        height: 50px;
     }
 
     #label-menu{
         display: none;
     }
 
-    #select-tipo{
-        max-width: 350px;
+    .container{
+        max-width: 46.5%;
+        min-width: 820px;
+
+    }
+
+    .titulo-modal{
+        width: 49.6%;
+        min-width: 877px;
     }
     
-    select#ano, select#mes, #dia input, #descricao input, #valor input{
-        font-size: 20px;
-    }
-
-    #select-ano, #select-mes, #dia{
-        min-width: 17%;
-        max-width: 250px;
-    }
-
-    #descricao{
-        min-width: 550px;
-    }
-
-    #valor{
-        width: 200px;
-    }
-
-    button.item-container{
-        position: relative;
-        width: 5%;
-        padding: 0;
-        border: none;
-        background: none;
-    }
-
-    i{
-        font-size: 48px;
-    }
-
  }
 /** ---------------- FIM MEDIA QUERIES ---------------- */
 /** ----------------------------------------------------------- */
