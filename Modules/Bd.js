@@ -22,7 +22,6 @@ export default class Bd{
         return parseInt(proximoId) + 1
     }
 
-
     //FUNÇÃO QUE ENVIA/PERSISTE OS DADOS DO USUARIO EM LOCALSTORAGE 
     gravar(despesa){
 
@@ -35,7 +34,6 @@ export default class Bd{
         //SET O ITEM 'ID' DE LOCALSTORAGE COM O RECEBIDO DO METODO GETPROXIMOID
         localStorage.setItem('id', id)
     }
-
 
     recuperarRegistros(){
         let despesas = []
@@ -92,6 +90,20 @@ export default class Bd{
         }
 
         return despesasFiltradas
+
+    }
+
+    updateDespesa(despesa, id, despesaAntiga){
+
+        for(let item in despesa){
+            
+            if(despesa[item] == '' || despesa[item] == null || despesa[item] == undefined){
+                despesa[item] = despesaAntiga[item]
+            }
+
+        }
+
+        localStorage.setItem(id, JSON.stringify(despesa))
 
     }
 

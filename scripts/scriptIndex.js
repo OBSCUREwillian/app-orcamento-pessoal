@@ -12,7 +12,6 @@ let visivel = false
 //  -------- Titulo Modal -------- 
 let tituloModal = document.getElementById('titulo-modal')
 tituloModal.style.padding = '0px'
-
 //  
 
 

@@ -317,7 +317,7 @@ h1{
 
 #container-tabela{
     position: relative;
-    top: 180px;
+    top: 120px;
     font-size: 20px;
     width: 100%;
     display: flex;
@@ -331,36 +331,59 @@ h1{
 table{
     position: relative;
     width: 100%;
-    text-align: center;
     border-collapse: collapse;
+    padding-left: 200px;
     
 }
 
-th{
-    border-bottom: 1px solid #000;
-    border-top: 1px solid #000;
+tr{
+    height: 50px;
+
 }
 
+tr:nth-of-type(odd) {
+    background: rgb(220, 221, 218);
+
+}
+
+td, th{
+    padding-left: 10px;
+}
 
 th{
-    width: 25%;
     padding-bottom: 8px;
     padding-top: 8px;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid #000;
+    text-align: start;
+    padding-right: 0px;
+
 }
 
-td{
-
-    padding-top: 20px;
+th.vazio{
+    width: 6%;
 }
 
+
+button.btn{
+    width: 40px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px ;
+    position: relative;
+}
 
 button.btn-danger{
     background-color: red;
-    width: 40px;
-    height: 30px;
     color: #fff;
-    border: none;
-    cursor: pointer;
+}
+
+button.btn-warning{
+    background-color: rgb(111, 152, 240);
+    justify-content: center;
+    font-size: 20px;
+    color: rgb(252, 252, 252);
 }
 
 
